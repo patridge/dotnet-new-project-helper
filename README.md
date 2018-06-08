@@ -1,0 +1,66 @@
+## Templates for creating `dotnet new` templates
+
+These are a series of `dotnet new` templates for creating and populating your own `dotnet new` templates.
+
+### Get started
+
+#### Prerequisites
+
+These templates use the `dotnet new` functionality of the .NET Core SDK. If you don't already have it installed (via the Visual Studio installer, for instance), [download and install the latest .NET Core SDK](https://www.microsoft.com/net/learn/get-started/).
+
+#### Install the templates via NuGet package
+
+These templates are published to NuGet for simple installation using the .NET tooling. The following command will install and make them available for use with the `dotnet new` command-line system.
+
+```bash
+dotnet new --install dotnet_new_template_creator
+```
+
+To uninstall the templates, use the same command but with the `--uninstall` option.
+
+```bash
+dotnet new --uninstall dotnet_new_template_creator
+```
+
+#### Install the templates locally
+
+If you are working with a local copy of these templates, run the following command to install them.
+
+```bash
+dotnet new --install /path/to/templates/directory/
+```
+
+While installing templates with that command can be done from a relative path (e.g., `--install ./templates/directory/`), uninstalling locally-installed templates seems to prefer an absolute path.
+
+```bash
+dotnet new --uninstall /path/to/templates/directory/
+```
+
+### Current templates
+
+For help with any of the parameters used in these templates, append `--help` to any template command.
+
+```bash
+dotnet new {template} --help
+```
+
+#### Repo README.md
+
+Create the initial README.md Markdown file for a repo.
+
+```bash
+dotnet new repo-readme --title \"Your project name\" --description \"Something descriptive about your project.\"
+```
+
+#### Repo LICENSE
+
+Create a LICENSE file for a repo, with a choice between MIT, Apache 2.0, or GNU-GPL 3.0.
+
+```bash
+dotnet new repo-license --license MIT
+```
+
+### Future templates/features
+
+* Template basics
+* Repo .nuspec for NuGet distribution

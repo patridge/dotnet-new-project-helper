@@ -35,7 +35,7 @@
                 "description": "Apache License 2.0"
               },
               {
-                "choice":"GNU-GPL",
+                "choice":"GPL",
                 "description": "GNU General Public License 3.0"
               }
             ]
@@ -51,7 +51,7 @@
         // },
         // "licenseIsGnuGpl": {
         //     "type": "computed",
-        //     "value": "(licenseType == \"GNU-GPL\")"
+        //     "value": "(licenseType == \"GPL\")"
         // }
     },
     "sources": [
@@ -59,8 +59,8 @@
         {
             "rename": {
                 "source-mit_LICENSE": "LICENSE",
-                "source-apache2.0_LICENSE": "LICENSE",
-                "source-gnu-gpl2.0_LICENSE": "LICENSE"
+                "source-apache-2.0_LICENSE": "LICENSE",
+                "source-gpl-3.0_LICENSE": "LICENSE"
             },
             "modifiers": [
                 {
@@ -72,13 +72,13 @@
                 {
                     "condition": "(licenseType != \"Apache\")",
                     "exclude": [
-                        "source-apache2.0_LICENSE"
+                        "source-apache-2.0_LICENSE"
                     ]
                 },
                 {
-                    "condition": "(licenseType != \"GNU-GPL\")",
+                    "condition": "(licenseType != \"GPL\")",
                     "exclude": [
-                        "source-gnu-gpl2.0_LICENSE"
+                        "source-gpl-3.0_LICENSE"
                     ]
                 }
             ]
@@ -93,28 +93,28 @@
         //                 "source-mit_LICENSE": "LICENSE"
         //             },
         //             "exclude": [
-        //                 "source-apache2.0_LICENSE",
-        //                 "source-gnu-gpl2.0_LICENSE"
+        //                 "source-apache-2.0_LICENSE",
+        //                 "source-gpl-3.0_LICENSE"
         //             ]
         //         },
         //         {
         //             "condition": "(licenseType == \"Apache\")",
         //             "rename": {
-        //                 "source-apache2.0_LICENSE": "LICENSE"
+        //                 "source-apache-2.0_LICENSE": "LICENSE"
         //             },
         //             "exclude": [
         //                 "source-mit_LICENSE",
-        //                 "source-gnu-gpl2.0_LICENSE"
+        //                 "source-gpl-3.0_LICENSE"
         //             ]
         //         },
         //         {
-        //             "condition": "(licenseType == \"GNU-GPL\")",
+        //             "condition": "(licenseType == \"GPL\")",
         //             "rename": {
-        //                 "source-gnu-gpl2.0_LICENSE": "LICENSE"
+        //                 "source-gpl-3.0_LICENSE": "LICENSE"
         //             },
         //             "exclude": [
         //                 "source-mit_LICENSE",
-        //                 "source-apache2.0_LICENSE"
+        //                 "source-apache-2.0_LICENSE"
         //             ]
         //         }
         //     ]
@@ -157,30 +157,30 @@
         //             ],
         //             "rename": {
         //                 "source-mit_LICENSE": "LICENSE",
-        //                 "source-apache2.0_LICENSE": "LICENSE",
-        //                 "source-gnu-gpl2.0_LICENSE": "LICENSE"
+        //                 "source-apache-2.0_LICENSE": "LICENSE",
+        //                 "source-gpl-3.0_LICENSE": "LICENSE"
         //             }
         //         },
         //         {
         //             "condition": "(licenseType != \"Apache\")",
         //             "exclude": [
-        //                 "./source-apache2.0_LICENSE"
+        //                 "./source-apache-2.0_LICENSE"
         //             ],
         //             "rename": {
         //                 "source-mit_LICENSE": "LICENSE",
-        //                 "source-apache2.0_LICENSE": "LICENSE",
-        //                 "source-gnu-gpl2.0_LICENSE": "LICENSE"
+        //                 "source-apache-2.0_LICENSE": "LICENSE",
+        //                 "source-gpl-3.0_LICENSE": "LICENSE"
         //             }
         //         },
         //         {
-        //             "condition": "((licenseType != \"GNU-GPL\"))",
+        //             "condition": "((licenseType != \"GPL\"))",
         //             "exclude": [
-        //                 "./source-gnu-gpl2.0_LICENSE"
+        //                 "./source-gpl-3.0_LICENSE"
         //             ],
         //             "rename": {
         //                 "source-mit_LICENSE": "LICENSE",
-        //                 "source-apache2.0_LICENSE": "LICENSE",
-        //                 "source-gnu-gpl2.0_LICENSE": "LICENSE"
+        //                 "source-apache-2.0_LICENSE": "LICENSE",
+        //                 "source-gpl-3.0_LICENSE": "LICENSE"
         //             }
         //         }
         //     ]
@@ -191,8 +191,8 @@
         //     "source": "./",
         //     "rename": {
         //         "./source-mit_LICENSE": "./LICENSE",
-        //         "./source-apache2.0_LICENSE": "./LICENSE",
-        //         "./source-gnu-gpl2.0_LICENSE": "./LICENSE"
+        //         "./source-apache-2.0_LICENSE": "./LICENSE",
+        //         "./source-gpl-3.0_LICENSE": "./LICENSE"
         //     },
         //     "modifiers": [
         //         {
@@ -204,13 +204,13 @@
         //         {
         //             "condition": "(licenseType != \"Apache\")",
         //             "exclude": [
-        //                 "source-apache2.0_LICENSE"
+        //                 "source-apache-2.0_LICENSE"
         //             ]
         //         },
         //         {
-        //             "condition": "(licenseType != \"GNU-GPL\")",
+        //             "condition": "(licenseType != \"GPL\")",
         //             "exclude": [
-        //                 "source-gnu-gpl2.0_LICENSE"
+        //                 "source-gpl-3.0_LICENSE"
         //             ]
         //         }
         //     ]
@@ -222,11 +222,11 @@
         //     "target": "LICENSE"
         // },
         // {
-        //     "source": "./source-apache2.0_LICENSE",
+        //     "source": "./source-apache-2.0_LICENSE",
         //     "target": "LICENSE"
         // },
         // {
-        //     "source": "./source-gnu-gpl2.0_LICENSE",
+        //     "source": "./source-gpl-3.0_LICENSE",
         //     "target": "LICENSE"
         // },
         // {
@@ -240,13 +240,13 @@
         //         {
         //             "condition": "(licenseType != \"Apache\")",
         //             "exclude": [
-        //                 "source-apache2.0_LICENSE"
+        //                 "source-apache-2.0_LICENSE"
         //             ]
         //         },
         //         {
-        //             "condition": "(licenseType != \"GNU-GPL\")",
+        //             "condition": "(licenseType != \"GPL\")",
         //             "exclude": [
-        //                 "source-gnu-gpl2.0_LICENSE"
+        //                 "source-gpl-3.0_LICENSE"
         //             ]
         //         }
         //     ]
