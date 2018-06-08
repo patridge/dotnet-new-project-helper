@@ -1,0 +1,255 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "identity": "PatridgeDev.Templates.RepoLicense",
+    "author": "Adam Patridge",
+    "classifications": [ "license" ],
+    "name": "Template creator: license template for Git/GitHub repos",
+    "shortName": "repo-license",
+    "preferNameDirectory": true,
+    "symbols": {
+        "copyrightYear": {
+            "type": "generated",
+            "generator": "now",
+            "parameters": {
+                "format": "yyyy"
+            },
+            "replaces": "{copyrightYear}"
+        },
+        "copyrightName": {
+            "type": "parameter",
+            "defaultValue": "Someone awesome",
+            "replaces": "{copyrightName}"
+        },
+        "licenseType": {
+            "isRequired": true,
+            "type": "parameter",
+            "datatype": "choice",
+            "defaultValue": "MIT",
+            "choices": [
+              {
+                "choice": "MIT",
+                "description": "MIT License"
+              },
+              {
+                "choice": "Apache",
+                "description": "Apache License 2.0"
+              },
+              {
+                "choice":"GNU-GPL",
+                "description": "GNU General Public License 3.0"
+              }
+            ]
+        },
+        // Could keep some evaulation logic in symbols to consolidate magic strings.
+        // "licenseIsMit": {
+        //     "type": "computed",
+        //     "value": "(licenseType == \"MIT\")"
+        // },
+        // "licenseIsApache": {
+        //     "type": "computed",
+        //     "value": "(licenseType == \"Apache\")"
+        // },
+        // "licenseIsGnuGpl": {
+        //     "type": "computed",
+        //     "value": "(licenseType == \"GNU-GPL\")"
+        // }
+    },
+    "sources": [
+        // SUCCESS! (Warning: will rename any file with partial name match, not just root file.)
+        {
+            "rename": {
+                "source-mit_LICENSE": "LICENSE",
+                "source-apache2.0_LICENSE": "LICENSE",
+                "source-gnu-gpl2.0_LICENSE": "LICENSE"
+            },
+            "modifiers": [
+                {
+                    "condition": "(licenseType != \"MIT\")",
+                    "exclude": [
+                        "source-mit_LICENSE"
+                    ]
+                },
+                {
+                    "condition": "(licenseType != \"Apache\")",
+                    "exclude": [
+                        "source-apache2.0_LICENSE"
+                    ]
+                },
+                {
+                    "condition": "(licenseType != \"GNU-GPL\")",
+                    "exclude": [
+                        "source-gnu-gpl2.0_LICENSE"
+                    ]
+                }
+            ]
+        }
+
+        // SUCCESS! (Warning: will rename any file with partial name match, not just root file.)
+        // {
+        //     "modifiers": [
+        //         {
+        //             "condition": "(licenseType == \"MIT\")",
+        //             "rename": {
+        //                 "source-mit_LICENSE": "LICENSE"
+        //             },
+        //             "exclude": [
+        //                 "source-apache2.0_LICENSE",
+        //                 "source-gnu-gpl2.0_LICENSE"
+        //             ]
+        //         },
+        //         {
+        //             "condition": "(licenseType == \"Apache\")",
+        //             "rename": {
+        //                 "source-apache2.0_LICENSE": "LICENSE"
+        //             },
+        //             "exclude": [
+        //                 "source-mit_LICENSE",
+        //                 "source-gnu-gpl2.0_LICENSE"
+        //             ]
+        //         },
+        //         {
+        //             "condition": "(licenseType == \"GNU-GPL\")",
+        //             "rename": {
+        //                 "source-gnu-gpl2.0_LICENSE": "LICENSE"
+        //             },
+        //             "exclude": [
+        //                 "source-mit_LICENSE",
+        //                 "source-apache2.0_LICENSE"
+        //             ]
+        //         }
+        //     ]
+        // }
+
+        // Various attempts to figure out the `rename` system.
+        // {
+        //     // "rename": {
+        //     //     "test.txt": "something.txt" // SUCCESS! (but it will be overly-aggressive renaming similar files, such as ./subdir/test.txt)
+        //     // }
+        //     // "rename": {
+        //     //     "./test.txt": "something.txt" // FAIL! Doesn't work
+        //     // }
+        //     // "rename": {
+        //     //     "./test.txt": "./something.txt" // FAIL! Doesn't work
+        //     // }
+        // }
+
+        // FAIL: template doesn't get installed at all.
+        // {
+        //     "source": "./source-mit_LICENSE",
+        //     "target": "./LICENSE",
+        //     "modifiers": [
+        //         {
+        //             "condition": "(!licenseIsMit)",
+        //             "exclude": [
+        //                 "source-mit_LICENSE"
+        //             ]
+        //         }
+        //     ]
+        // },
+
+        // FAIL: Always ends up with MIT license file in output.
+        // {
+        //     "modifiers": [
+        //         {
+        //             "condition": "(licenseType != \"MIT\")",
+        //             "exclude": [
+        //                 "./source-mit_LICENSE"
+        //             ],
+        //             "rename": {
+        //                 "source-mit_LICENSE": "LICENSE",
+        //                 "source-apache2.0_LICENSE": "LICENSE",
+        //                 "source-gnu-gpl2.0_LICENSE": "LICENSE"
+        //             }
+        //         },
+        //         {
+        //             "condition": "(licenseType != \"Apache\")",
+        //             "exclude": [
+        //                 "./source-apache2.0_LICENSE"
+        //             ],
+        //             "rename": {
+        //                 "source-mit_LICENSE": "LICENSE",
+        //                 "source-apache2.0_LICENSE": "LICENSE",
+        //                 "source-gnu-gpl2.0_LICENSE": "LICENSE"
+        //             }
+        //         },
+        //         {
+        //             "condition": "((licenseType != \"GNU-GPL\"))",
+        //             "exclude": [
+        //                 "./source-gnu-gpl2.0_LICENSE"
+        //             ],
+        //             "rename": {
+        //                 "source-mit_LICENSE": "LICENSE",
+        //                 "source-apache2.0_LICENSE": "LICENSE",
+        //                 "source-gnu-gpl2.0_LICENSE": "LICENSE"
+        //             }
+        //         }
+        //     ]
+        // },
+
+        // FAIL: Tried to do a rename for all and rely on exclude modifier to only have one result file. (Problem: `rename` doesn't do paths?)
+        // {
+        //     "source": "./",
+        //     "rename": {
+        //         "./source-mit_LICENSE": "./LICENSE",
+        //         "./source-apache2.0_LICENSE": "./LICENSE",
+        //         "./source-gnu-gpl2.0_LICENSE": "./LICENSE"
+        //     },
+        //     "modifiers": [
+        //         {
+        //             "condition": "(licenseType != \"MIT\")",
+        //             "exclude": [
+        //                 "source-mit_LICENSE"
+        //             ]
+        //         },
+        //         {
+        //             "condition": "(licenseType != \"Apache\")",
+        //             "exclude": [
+        //                 "source-apache2.0_LICENSE"
+        //             ]
+        //         },
+        //         {
+        //             "condition": "(licenseType != \"GNU-GPL\")",
+        //             "exclude": [
+        //                 "source-gnu-gpl2.0_LICENSE"
+        //             ]
+        //         }
+        //     ]
+        // },
+
+        // FAIL: Tried to just do a source for each and rely on exclude modifier to only have one result file.
+        // {
+        //     "source": "./source-mit_LICENSE",
+        //     "target": "LICENSE"
+        // },
+        // {
+        //     "source": "./source-apache2.0_LICENSE",
+        //     "target": "LICENSE"
+        // },
+        // {
+        //     "source": "./source-gnu-gpl2.0_LICENSE",
+        //     "target": "LICENSE"
+        // },
+        // {
+        //     "modifiers": [
+        //         {
+        //             "condition": "(licenseType != \"MIT\")",
+        //             "exclude": [
+        //                 "source-mit_LICENSE"
+        //             ]
+        //         },
+        //         {
+        //             "condition": "(licenseType != \"Apache\")",
+        //             "exclude": [
+        //                 "source-apache2.0_LICENSE"
+        //             ]
+        //         },
+        //         {
+        //             "condition": "(licenseType != \"GNU-GPL\")",
+        //             "exclude": [
+        //                 "source-gnu-gpl2.0_LICENSE"
+        //             ]
+        //         }
+        //     ]
+        // }
+    ]
+}
