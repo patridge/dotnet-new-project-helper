@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>dotnet-new-template-creator</id>
+    <version>0.0.1</version>
+    <authors>Adam Patridge</authors>
+    <licenseUrl>https://github.com/patridge/dotnet-new-template-creator/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/patridge/dotnet-new-template-creator</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Templates for `dotnet new` used to create your own `dotnet new` templates.</description>
+    <releaseNotes>First pre-release. Expect bugs.</releaseNotes>
+    <copyright>© 2018 Adam Patridge</copyright>
+    <tags>template</tags>
+    <packageTypes>
+      <packageType name="Template" />
+    </packageTypes>
+  </metadata>
+  <files>
+    <file src=".\add-nuspec\**" target="content\add-nuspec" exclude=""/>
+    <file src=".\add-license\**" target="content\add-license" exclude=""/>
+    <file src=".\add-readme\**" target="content\add-readme" exclude=""/>
+    <!--<file src=".\create-template\**" target="content\create-template" exclude=""/> -->
+  </files>
+</package>
