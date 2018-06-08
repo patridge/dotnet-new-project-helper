@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>{id}</id>
+    <version>{initialVersion}</version>
+    <authors>{authorsCsv}</authors>
+    <licenseUrl>{licenseUrl}</licenseUrl>
+    <projectUrl>{projectUrl}</projectUrl>
+    <requireLicenseAcceptance>{requireLicenseAcceptance}</requireLicenseAcceptance>
+    <description>{description}</description>
+    <releaseNotes>{initialReleaseNotes}</releaseNotes>
+    <copyright>© {copyrightYear} {copyrightHolder}</copyright>
+    <tags>{tagsSpaceDelimitedList}</tags>
+    <!-- TODO: https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package#setting-a-package-type -->
+    <!-- <packageTypes>
+      <packageType name="Template" />
+    </packageTypes> -->
+  </metadata>
+  <files>
+    <file src=".\source_.template.config\**" target=".template.config\**" exclude=""/>
+  </files>
+</package>

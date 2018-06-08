@@ -1,0 +1,45 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "identity": "PatridgeDev.Templates.RepoNuspec",
+    "author": "Adam Patridge",
+    "classifications": [ "NuGet" ],
+    "name": "Template creator: .nuspec template for projects",
+    "shortName": "repo-nuspec",
+    "sourceName": "{projectTitle}",
+    "preferNameDirectory": true,
+    "symbols": {
+        "projectTitle": {
+            "type": "parameter",
+            "defaultValue": "Your new project",
+            "replaces": "{projectTitle}"
+        },
+        "projectDescription": {
+            "type": "parameter",
+            "defaultValue": "",
+            "replaces": "{projectDescription}"
+        },
+        "copyrightYear": {
+            "type": "generated",
+            "generator": "now",
+            "parameters": {
+                "format": "yyyy"
+            },
+            "replaces":"{copyrightYear}"
+        }
+    },
+    "sources": [
+        {
+            "rename": {
+                "source_project.nuspec": "LICENSE",
+            },
+            "modifiers": [
+                // {
+                //     "condition": "(licenseType != \"GNU-GPL\")",
+                //     "exclude": [
+                //         "source-gnu-gpl2.0_LICENSE"
+                //     ]
+                // }
+            ]
+        },
+    ],
+}
