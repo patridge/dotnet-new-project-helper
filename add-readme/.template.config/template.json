@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "identity": "PatridgeDev.Templates.RepoReadme",
+    "author": "Adam Patridge",
+    "classifications": [ "Markdown", "readme" ],
+    "name": "Template creator: README.md template for Git/GitHub repos",
+    "shortName": "repo-readme",
+    "sourceName": "{projectTitle}",
+    "preferNameDirectory": true,
+    "symbols": {
+        "projectTitle": {
+            "type": "parameter",
+            "defaultValue": "Your new project",
+            "replaces": "{projectTitle}"
+        },
+        "projectDescription": {
+            "type": "parameter",
+            "defaultValue": "",
+            "replaces": "{projectDescription}"
+        }
+    }
+}
