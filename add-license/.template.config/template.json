@@ -8,10 +8,21 @@
     "preferNameDirectory": true,
     "symbols": {
         "copyrightYear": {
+            "type": "parameter"
+        },
+        "copyrightYearGenerated": {
             "type": "generated",
             "generator": "now",
             "parameters": {
                 "format": "yyyy"
+            }
+        },
+        "copyrightYearReplacer": {
+            "type": "generated",
+            "generator": "coalesce",
+            "parameters": {
+              "sourceVariableName": "copyrightYear",
+              "fallbackVariableName": "copyrightYearGenerated"
             },
             "replaces": "{copyrightYear}"
         },
