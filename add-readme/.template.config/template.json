@@ -4,7 +4,7 @@
     "author": "Adam Patridge",
     "classifications": [ "Markdown", "readme" ],
     "name": "Template creator: README.md template for Git/GitHub repos",
-    "shortName": "repo-readme",
+    "shortName": "add-readme",
     "sourceName": "{projectTitle}",
     "preferNameDirectory": true,
     "symbols": {
