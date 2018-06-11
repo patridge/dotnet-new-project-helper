@@ -4,7 +4,7 @@
     "author": "Adam Patridge",
     "classifications": [ "NuGet" ],
     "name": "Template creator: .nuspec template for projects",
-    "shortName": "repo-nuspec",
+    "shortName": "add-nuspec",
     "sourceName": "{projectTitle}",
     "preferNameDirectory": true,
     "symbols": {

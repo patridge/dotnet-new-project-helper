@@ -4,7 +4,7 @@
     "author": "Adam Patridge",
     "classifications": [ "license" ],
     "name": "Template creator: license template for Git/GitHub repos",
-    "shortName": "repo-license",
+    "shortName": "add-license",
     "preferNameDirectory": true,
     "symbols": {
         "copyrightYear": {
