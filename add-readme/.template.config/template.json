@@ -5,7 +5,6 @@
     "classifications": [ "Markdown", "readme" ],
     "name": "Template creator: README.md template for Git/GitHub repos",
     "shortName": "add-readme",
-    "sourceName": "{projectTitle}",
     "preferNameDirectory": true,
     "symbols": {
         "projectTitle": {
