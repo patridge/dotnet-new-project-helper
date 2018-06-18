@@ -22,20 +22,6 @@ To uninstall the templates, use the same command but with the `--uninstall` opti
 dotnet new --uninstall dotnet_new_template_creator
 ```
 
-#### Install the templates locally
-
-If you are working with a local copy of these templates, run the following command to install them.
-
-```bash
-dotnet new --install /path/to/templates/directory/
-```
-
-While installing templates with that command can be done from a relative path (e.g., `--install ./templates/directory/`), uninstalling locally-installed templates seems to prefer an absolute path.
-
-```bash
-dotnet new --uninstall /path/to/templates/directory/
-```
-
 ### Current templates
 
 For help with any of the parameters used in these templates, append `--help` to any template command.
