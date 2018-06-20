@@ -14,8 +14,6 @@ dotnet new add-readme --name test --title "Awesome project" --description "This 
 Get-Content test/README.md
 # List contents of test output location (make sure nothing more than README.md)
 Get-ChildItem -Path test
+
 # Delete test output location contents for next test
 Get-ChildItem -Path test -Include * -File -Recurse | foreach { $_.Delete() }
-
-# Clean up after ourselves
-Get-ChildItem test -Recurse | Remove-Item -Force

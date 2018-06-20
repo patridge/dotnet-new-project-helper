@@ -26,5 +26,5 @@ dotnet new add-license --name test --license GPL --fullName "Someone SuperAwesom
 Get-Content -TotalCount 3 test/LICENSE
 Get-ChildItem -Path test
 
-# Clean up after ourselves
-Get-ChildItem test -Recurse | Remove-Item -Force
+# Delete test output location contents for next test
+Get-ChildItem -Path test -Include * -File -Recurse | foreach { $_.Delete() }
