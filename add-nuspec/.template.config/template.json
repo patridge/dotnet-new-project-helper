@@ -5,41 +5,112 @@
     "classifications": [ "NuGet" ],
     "name": "Template creator: .nuspec template for projects",
     "shortName": "add-nuspec",
-    "sourceName": "{projectTitle}",
     "preferNameDirectory": true,
     "symbols": {
+        "projectFilename": {
+            "type": "parameter",
+            "defaultValue": "project",
+            "datatype": "string"
+        },
+        "projectFilenameRenamer": {
+            "type": "derived",
+            "valueSource": "projectFilename",
+            "valueTransform": "appendNuspecExtension",
+            "fileRename": "source_project-nuspec"
+        },
+        "packageId": {
+            "type": "parameter",
+            "defaultValue": "awesomeProject",
+            "datatype": "string"
+        },
+        "packageIdReplacer": {
+            "type": "generated",
+            "generator": "coalesce",
+            "parameters": {
+              "sourceVariableName": "packageId",
+              "fallbackVariableName": "projectFilename"
+            },
+            "replaces": "{id}"
+        },
+        "version": {
+            "type": "parameter",
+            "defaultValue": "awesomeProject",
+            "datatype": "string",
+            "replaces": "{version}"
+        },
+        "authors": {
+            "type": "parameter",
+            "defaultValue": "",
+            "replaces": "{authorsCsv}",
+            "description": "Comma-delimited list of project authors."
+        },
         "projectTitle": {
             "type": "parameter",
             "defaultValue": "Your new project",
             "replaces": "{projectTitle}"
         },
-        "projectDescription": {
+        "licenseUrl": {
             "type": "parameter",
             "defaultValue": "",
-            "replaces": "{projectDescription}"
+            "replaces": "{licenseUrl}"
+        },
+        "projectUrl": {
+            "type": "parameter",
+            "defaultValue": "",
+            "replaces": "{projectUrl}"
+        },
+        "requireLicenseAcceptance": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "replaces": "{requireLicenseAcceptance}"
+        },
+        "description": {
+            "type": "parameter",
+            "defaultValue": "",
+            "replaces": "{description}"
+        },
+        "releaseNotes": {
+            "type": "parameter",
+            "defaultValue": "",
+            "replaces": "{releaseNotes}"
         },
         "copyrightYear": {
+            "type": "parameter"
+        },
+        "copyrightYearGenerated": {
             "type": "generated",
             "generator": "now",
             "parameters": {
                 "format": "yyyy"
+            }
+        },
+        "copyrightYearReplacer": {
+            "type": "generated",
+            "generator": "coalesce",
+            "parameters": {
+              "sourceVariableName": "copyrightYear",
+              "fallbackVariableName": "copyrightYearGenerated"
             },
-            "replaces":"{copyrightYear}"
+            "replaces": "{copyrightYear}"
+        },
+        "copyrightName": {
+            "type": "parameter",
+            "defaultValue": "Someone awesome",
+            "replaces": "{copyrightName}"
+        },
+        "tags": {
+            "type": "parameter",
+            "defaultValue": "",
+            "replaces": "{tagsSpaceDelimitedList}",
+            "description": "Space-delimited list of keywords describing the NuGet package."
         }
     },
-    "sources": [
-        {
-            "rename": {
-                "source_project.nuspec": "LICENSE",
-            },
-            "modifiers": [
-                // {
-                //     "condition": "(licenseType != \"GNU-GPL\")",
-                //     "exclude": [
-                //         "source-gnu-gpl2.0_LICENSE"
-                //     ]
-                // }
-            ]
-        },
-    ],
+    "forms": {
+        "appendNuspecExtension": {
+           "identifier": "replace",
+           "pattern": "(?<=^.*)$",
+           "replacement": ".nuspec"
+        }
+    }
 }

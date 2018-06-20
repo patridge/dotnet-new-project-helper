@@ -32,7 +32,7 @@ dotnet new {template} --help
 
 #### Repo README.md
 
-Create the initial README.md Markdown file for a repo.
+Create the initial README.md Markdown file for a repo folder.
 
 ```bash
 dotnet new repo-readme --title \"Your project name\" --description \"Something descriptive about your project.\"
@@ -40,7 +40,15 @@ dotnet new repo-readme --title \"Your project name\" --description \"Something d
 
 #### Repo LICENSE
 
-Create a LICENSE file for a repo, with a choice between MIT, Apache 2.0, or GNU-GPL 3.0.
+Create a LICENSE file for a repo folder, with a choice between MIT, Apache 2.0, or GNU-GPL 3.0.
+
+```bash
+dotnet new repo-license --license MIT
+```
+
+#### Repo .nuspec configuration
+
+Create a .nuspec file for a project folder.
 
 ```bash
 dotnet new repo-license --license MIT
@@ -48,5 +56,4 @@ dotnet new repo-license --license MIT
 
 ### Future templates/features
 
-* Template basics
-* Repo .nuspec for NuGet distribution
+* Custom template basics

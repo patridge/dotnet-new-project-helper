@@ -5,9 +5,16 @@
             "longName": "title",
             "shortName": "t"
         },
-        "projectDescription": {
-            "longName": "description",
-            "shortName": "d"
+        "authorsCsv": {
+            "longName": "authors",
+            "shortName": "a"
+        },
+        "copyrightYear": {
+            "shortName": "y"
+        },
+        "copyrightName": {
+            "longName": "fullName",
+            "shortName": "c"
         }
     },
     "usageExamples": [
