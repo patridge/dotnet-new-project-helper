@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>dotnet-new-template-creator</id>
+    <id>dotnet-new-project-helper</id>
     <version>0.1.0</version>
     <authors>Adam Patridge</authors>
-    <licenseUrl>https://github.com/patridge/dotnet-new-template-creator/blob/master/LICENSE</licenseUrl>
-    <projectUrl>https://github.com/patridge/dotnet-new-template-creator</projectUrl>
+    <licenseUrl>https://github.com/patridge/dotnet-new-project-helper/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/patridge/dotnet-new-project-helper</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Templates for `dotnet new` used to create your own `dotnet new` templates.</description>
     <releaseNotes>First pre-release. Expect bugs.</releaseNotes>

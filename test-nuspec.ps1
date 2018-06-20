@@ -1,10 +1,10 @@
 Set-PSDebug -Trace 1
 # Remove any prior templates
-dotnet new --uninstall dotnet-new-template-creator
+dotnet new --uninstall dotnet-new-project-helper
 # Pack up a new NuGet package
-nuget pack ./dotnet-new-template-creator.nuspec
+nuget pack ./dotnet-new-project-helper.nuspec
 # Install the new package
-dotnet new --install ./dotnet-new-template-creator.0.0.1.nupkg
+dotnet new --install ./dotnet-new-project-helper.0.0.1.nupkg
 # Clear out our test output location
 Get-ChildItem test -Recurse | Remove-Item -Force
 
