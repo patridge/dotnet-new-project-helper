@@ -1,0 +1,18 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "identity": "PatridgeDev.Templates.MakeTemplate",
+    "author": "Adam Patridge",
+    "classifications": [ "Template", "json" ],
+    "name": "Template creator: make a directory a 'dotnet new' template",
+    "shortName": "make-template",
+    "preferNameDirectory": true,
+    "symbols": {
+
+    },
+    "sources": [
+        {
+            "source": "./source_.template-config",
+            "target": ".template.config"
+        }
+    ]
+}

@@ -2,13 +2,18 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>dotnet-new-project-helper</id>
-    <version>0.1.0</version>
+    <version>0.2.0</version>
     <authors>Adam Patridge</authors>
     <licenseUrl>https://github.com/patridge/dotnet-new-project-helper/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/patridge/dotnet-new-project-helper</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Templates for `dotnet new` used to create your own `dotnet new` templates.</description>
-    <releaseNotes>First pre-release. Expect bugs.</releaseNotes>
+    <releaseNotes>
+<![CDATA[
+0.2.0: Adding 'make-template' template
+0.1.0: First pre-release. Expect bugs.
+]]>
+    </releaseNotes>
     <copyright>© 2018 Adam Patridge</copyright>
     <tags>template</tags>
     <packageTypes>
@@ -16,9 +21,10 @@
     </packageTypes>
   </metadata>
   <files>
-    <file src=".\add-nuspec\**" target="content\add-nuspec" exclude=""/>
-    <file src=".\add-license\**" target="content\add-license" exclude=""/>
-    <file src=".\add-readme\**" target="content\add-readme" exclude=""/>
-    <file src=".\add-nuspec\**" target="content\add-nuspec" exclude=""/>
+    <file src=".\add-nuspec\**" target="content\add-nuspec" exclude="" />
+    <file src=".\add-license\**" target="content\add-license" exclude="" />
+    <file src=".\add-readme\**" target="content\add-readme" exclude="" />
+    <file src=".\add-nuspec\**" target="content\add-nuspec" exclude="" />
+    <file src=".\make-template\**" target="content\make-template" exclude="" />
   </files>
 </package>
