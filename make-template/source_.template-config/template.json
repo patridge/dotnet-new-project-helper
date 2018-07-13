@@ -1,74 +1,20 @@
 {
     "$schema": "http://json.schemastore.org/template",
-    "identity": "XamarinUniversity.ContentTemplates.Exercise",
-    "author": "Adam Patridge",
-    "classifications": [ "XamarinUniversity", "Course", "Exercise" ],
-    "name": "Course exercise for Xamarin University",
-    "shortName": "xamu-exercise",
-    "sourceName": "XamuExerciseTemplate",
+    "identity": "{templateId}",
+    "author": "{author}",
+    "classifications": [ {classificationsQuotedCsv} ],
+    "name": "{name}",
+    "shortName": "{shortName}",
     "preferNameDirectory": true,
-    "guids": [
-        "a80eda4a-1105-44b6-a161-81bf7bac7557"
-    ],
     "symbols": {
-        "courseId": {
-            "type": "parameter",
-            "defaultValue": "abc101",
-            "replaces": "{courseId}"
-        },
-        "courseIdUpper": {
-            "type": "generated",
-            "generator": "casing",
-            "parameters": {
-              "source": "courseId",
-              "toLower": false
-            },
-            "replaces": "{courseIdUpper}"
-        },
-        "exerciseNumber": {
-            "type": "parameter",
-            "defaultValue": "1",
-            "replaces": "{exerciseNumber}"
-        },
-        "title": {
-            "type": "parameter",
-            "defaultValue": "Course long title",
-            "replaces": "{title}"
-        },
-        "titleShort": {
-            "type": "parameter",
-            "defaultValue": "Course title",
-            "replaces": "{titleShort}"
-        },
-        "repoUrl": {
-            "type": "parameter",
-            "defaultValue": "https://github.com/XamarinUniversity/ABC101/",
-            "replaces": "{repoUrl}"
-        },
-        "primaryGoal": {
-            "type": "parameter",
-            "defaultValue": "In this exercise, you will do something very useful.",
-            "replaces": "{primaryGoal}"
-        },
-        "completedImageFilename": {
-            "type": "parameter",
-            "defaultValue": "ex1_completed.png",
-            "replaces": "{completedImageFilename}"
-        },
-        "completedImageAltDescription": {
-            "type": "parameter",
-            "defaultValue": "Screenshot of the completed exercise.",
-            "replaces": "{completedImageAltDescription}"
-        },
-        "completedImageTitle": {
-            "type": "parameter",
-            "defaultValue": "Completed exercise",
-            "replaces": "{completedImageTitle}"
-        },
-        "summary": {
-            "type": "parameter",
-            "defaultValue": "In this exercise, you completed something very useful.",
-            "replaces": "{summary}"
-        }
-    }
+        //"someIdentity": {
+        //    "description": "Gives the information about the purpose of the symbol."
+        //    "type": "parameter",
+        //    "defaultValue": "This is a pretend parameter used to identify something in the generated template content.",
+        //    "replaces": "{identity}" // Note: the `{…}`, curly brace notation, is the author's preference. They are not remotely required, but I find they help avoid replacement false-positives.
+        //},
+    },
+    "sources": {
+
+    },
 }
