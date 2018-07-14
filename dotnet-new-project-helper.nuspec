@@ -7,7 +7,7 @@
     <licenseUrl>https://github.com/patridge/dotnet-new-project-helper/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/patridge/dotnet-new-project-helper</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Templates for `dotnet new` used to create your own `dotnet new` templates.</description>
+    <description>Templates for `dotnet new` used to help create your own projects and source repositories.</description>
     <releaseNotes>
 <![CDATA[
 0.2.0: Adding 'make-template' template

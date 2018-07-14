@@ -57,3 +57,4 @@ dotnet new repo-license --license MIT
 ### Future templates/features
 
 * Custom template basics
+* GitHub issue and/or pull request templates
