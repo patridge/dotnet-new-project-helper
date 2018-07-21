@@ -37,10 +37,11 @@
             "replaces": "{author}"
         },
         "classificationsQuotedCsv": {
-            "description": "A list of descriptions applicable to your template, in the form of `\"Something\", \"Awesome\"`.",
+            "description": "A list of descriptions applicable to your template, in the form of `\"Something\", \"Awesome\"`. (WARNING: The .NET Core SDK v2.1.300 has a bug with escaped characters in parameter values, so do not use this value [yet]. [Fixed in https://github.com/dotnet/templating/issues/1542])",
             "type": "parameter",
             "datatype": "text",
-            "replaces": "{author}"
+            "replaces": "{classificationsQuotedCsv}",
+            "defaultValue": ""
         },
         "templateName": {
             "description": "The template name displayed in `dotnet new --list`.",
@@ -59,7 +60,10 @@
         {
             // Since we couldn't have a .template.config folder serve as template data, we name it something else initially and put it in the appropriate output with this.
             "source": "./source_.template-config",
-            "target": ".template.config"
+            "target": ".template.config",
+            "rename": {
+                "source_template.json": "template.json"
+            }
         }
     ]
 }

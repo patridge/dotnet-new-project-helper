@@ -1,39 +1,24 @@
 {
     "$schema": "http://json.schemastore.org/dotnetcli.host",
     "symbolInfo": {
-        "courseId": {
+        "templateId": {
             "shortName": "id"
         },
-        "exerciseNumber": {
-            "shortName": "num"
+        "author": {
+            "shortName": "au"
         },
-        "title": {
-            "shortName": "t"
+        "classificationsQuotedCsv": {
+            "shortName": "c"
         },
-        "titleShort": {
-            "shortName": "ts"
+        "templateName": {
+            "shortName": "tn"
         },
-        "repoUrl": {
-            "shortName": "repo"
-        },
-        "primaryGoal": {
-            "shortName": "goal"
-        },
-        "completedImageFilename": {
-            "shortName": "imgSrc"
-        },
-        "completedImageAltDescription": {
-            "shortName": "imgAlt"
-        },
-        "completedImageTitle": {
-            "shortName": "imgTitle"
-        },
-        "summary": {
-            "shortName": "sum"
+        "templateShortName": {
+            "shortName": "tns"
         }
     },
     "usageExamples": [
         "",
-        "--name exercise2 --id abc123 --num 2 --title \"Create an exercise\" --repo \"https://github.com/XamarinUniversity/ABC101\" --goal \"In this exercise you will create an exercise.\" --summary \"In this exercise you created an exercise.\""
+        "--name test --templateId \"test.make-template\" --author \"Someone\" --classificationsQuotedCsv \"\\\"Sample\\\", \\\"Something\\\"\" --templateName \"Test run: make-template\" --templateShortName \"test-make-template\""
     ]
 }
